@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
 
 class Application:
     def __init__(self, master):
@@ -30,7 +31,13 @@ class Application:
        #Botão de play
        self.bt_play = Button(self.frame_1, text= 'PLAY/PAUSE', bd = 2, bg = '#DA70D6', fg='white', font= ('verdana', 10, 'bold'))
        self.bt_play.place(relx= 0.1, rely= 0.1, relheight= 0.6, relwidth= 0.3)
-       
+       #Botão de reproduzir aleatóriamente 
+       self.bt_random = Button(self.frame_2, text = ' reprodução \n aleatoria', bd =2, bg = '#DA70D6', fg= 'white', font= ('verdana', 10, 'bold') )
+       self.bt_random.place(relx = 0.01, rely = 0.1, relheight = 0.10, relwidth = 0.2)
+       #Botão para reproduzir sequencialmente 
+       self.bt_sequential = Button(self.frame_2, text = 'reprodução \n sequencial', bd = 2, bg ='#DA70D6', fg = 'white', font = ('verdana', 10, 'bold'))
+       self.bt_sequential.place(relx = 0.01, rely = 0.3, relheight= 0.10, relwidth= 0.2)
+
        
     def combobox(self):
         #combobox para selecionar história do dia
