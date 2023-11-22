@@ -30,9 +30,7 @@ class Application:
        #Botão de play
        self.bt_play = Button(self.frame_1, text= 'PLAY/PAUSE', bd = 2, bg = '#DA70D6', fg='white', font= ('verdana', 10, 'bold'))
        self.bt_play.place(relx= 0.1, rely= 0.1, relheight= 0.6, relwidth= 0.3)
-       self.icone_play_pause = PhotoImage(file='IMAGENS/3002890-200.png')
-       self.bt_play.config(image=self.icone_play, compound="left", command=self.funcao_do_botao)
-       self.bt_play.image = self.icone_play
+       
        
     def combobox(self):
         #combobox para selecionar história do dia
