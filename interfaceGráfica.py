@@ -1,41 +1,41 @@
 from tkinter import *
 from tkinter import ttk
 
-class Application:
+class Aplicacao:
     def __init__(self, master):
-        self.root = master
-        self.window_config()
+        self.raiz = master
+        self.configurando_janela()
         self.quadros_da_tela()
-        self.widgets()
+        self.componentes()
         self.combobox()
-        self.root.mainloop()
+        self.raiz.mainloop()
 
     def quadros_da_tela(self):
-        self.frame_1 = Frame(self.root, bd=4, bg='#DDA0DD',
+        self.frame_1 = Frame(self.raiz, bd=4, bg='#DDA0DD',
                              highlightbackground='#D8BFD8', highlightthickness=3)
         self.frame_1.place(relx=0.02, rely=0.02, relwidth=0.96, relheight=0.15)
 
-        self.frame_2 = Frame(self.root, bd=4, bg='#DDA0DD',
+        self.frame_2 = Frame(self.raiz, bd=4, bg='#DDA0DD',
                              highlightbackground='#D8BFD8', highlightthickness=3)
         self.frame_2.place(relx=0.02, rely=0.2, relwidth=0.96, relheight=0.76)
 
-    def window_config(self):
-        self.root.configure(background='#DA70D6')
-        self.root.title("Contador de histórias")
-        self.root.geometry('600x600')
-        self.root.resizable(True, True)
+    def configurando_janela(self):
+        self.raiz.configure(background='#DA70D6')
+        self.raiz.title("Contador de histórias")
+        self.raiz.geometry('600x600')
+        self.raiz.resizable(True, True)
 
-    def widgets(self):
-        self.play_clicked = False  
+    def componentes(self):
+        self.botao_reproduzir_clicado = False  
 
-        self.bt_play = Button(self.frame_1, text='PLAY\ \nPAUSE', bd=3, bg='#DA70D6', fg='white', font=('verdana', 10, 'bold'), command=self.reproduzir_historia)
+        self.bt_play = Button(self.frame_1, text='PLAY\ \nPAUSE', bd=3, bg='#DA70D6', fg='white', font=('verdana', 10, 'bold'), command=self.botao_reproduzir_clicado)
         self.bt_play.place(relx=0.01, rely=0.1, relheight=0.6, relwidth=0.2)
 
-        self.bt_random = Button(self.frame_2, text=' reprodução \n aleatoria', bd=2, bg='#DA70D6', fg='white', font=('verdana', 10, 'bold'))
-        self.bt_random.place(relx=0.01, rely=0.1, relheight=0.10, relwidth=0.2)
+        self.bt_aleatorio = Button(self.frame_2, text=' reprodução \n aleatoria', bd=2, bg='#DA70D6', fg='white', font=('verdana', 10, 'bold'))
+        self.bt_aleatorio.place(relx=0.01, rely=0.1, relheight=0.10, relwidth=0.2)
 
-        self.bt_sequential = Button(self.frame_2, text='reprodução \n sequencial', bd=2, bg='#DA70D6', fg='white', font=('verdana', 10, 'bold'))
-        self.bt_sequential.place(relx=0.01, rely=0.3, relheight=0.10, relwidth=0.2)
+        self.bt_sequencial = Button(self.frame_2, text='reprodução \n sequencial', bd=2, bg='#DA70D6', fg='white', font=('verdana', 10, 'bold'))
+        self.bt_sequencial.place(relx=0.01, rely=0.3, relheight=0.10, relwidth=0.2)
 
         self.label_mensagem = Label(self.frame_2, text='', font=('verdana', 12, 'bold'), bg='#DDA0DD')
         self.label_mensagem.place(relx=0.25, rely=0.5)
@@ -52,11 +52,11 @@ class Application:
         self.combo_meses.place(relx=0.5, rely=0.1, relheight=0.6, relwidth=0.1)
 
     def reproduzir_historia(self):
-        if not self.play_clicked:
+        if not self.botao_reproduzir_clicado:
             self.label_mensagem.config(text='Reproduzindo história...')
             self.label_mensagem.place(relx = 0.4, rely = 0.3)
             self.play_clicked = True
 
 
-root = Tk()
-app = Application(root)
+raiz = Tk()
+app = Aplicacao(raiz)
