@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 import random
+import pygame
+
 class Aplicacao:
     def __init__(self, master):
         self.raiz = master
